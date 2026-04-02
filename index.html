@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delphi — Digital Clone Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.97); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-scale-in {
+            opacity: 0;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .delay-0 { animation-delay: 0ms; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        .text-balance { text-wrap: balance; }
+        .text-pretty { text-wrap: pretty; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-fade-in-up, .animate-fade-in, .animate-scale-in {
+                animation: none;
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Custom font families to match the design's feel */
+        .font-sans-custom {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .font-mono-custom {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        /* Subtle dot grid texture for background */
+        .bg-dot-grid {
+            background-color: #f6f6f6;
+            background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-dot-grid text-[#111827] font-sans-custom antialiased min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="w-full px-8 py-8 flex justify-between items-center animate-fade-in delay-0 relative z-50 max-w-[1440px] mx-auto">
+        <div class="flex items-center gap-3">
+            <!-- Logo Mark -->
+            <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#244BFF]">
+                <path d="M0 10L6 4H12L6 10H0Z" fill="currentColor"/>
+                <path d="M8 16L14 10H20L14 16H8Z" fill="currentColor"/>
+                <path d="M16 10L22 4H28L22 10H16Z" fill="currentColor"/>
+            </svg>
+            <!-- Logo Text -->
+            <span class="text-2xl font-medium tracking-tight">delphi</span>
+        </div>
+        
+        <div class="hidden md:flex items-center gap-10 text-[13px] tracking-[0.08em] uppercase text-gray-900">
+            <a href="#" class="hover:text-[#244BFF] transition-colors duration-200">Manifesto</a>
+            <a href="#" class="hover:text-[#244BFF] transition-colors duration-200">Team</a>
+            <a href="#" class="hover:text-[#244BFF] transition-colors duration-200">Blog</a>
+            <a href="#" class="hover:text-[#244BFF] transition-colors duration-200">Careers</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="flex-grow flex items-center relative w-full max-w-[1440px] mx-auto px-8 pt-12 pb-32">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full items-center">
+            
+            <!-- Left Content Column -->
+            <div class="lg:col-span-6 z-20 pr-4">
+                
+                <!-- Announcement Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded border border-gray-200 bg-white mb-8 animate-fade-in-up delay-100 shadow-sm">
+                    <div class="w-2 h-2 rounded-full bg-[#244BFF]"></div>
+                    <span class="text-[13px] text-gray-700">Announcing our $5M round led by General Catalyst,...</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-[56px] lg:text-[64px] leading-[1.1] font-normal text-[#244BFF] tracking-tight mb-6 text-balance animate-fade-in-up delay-200">Create Your Digital Clone for 24/7 Personalized Mentorship</h1>
+
+                <!-- Subheadline -->
+                <p class="text-[20px] leading-[1.6] text-gray-800 max-w-[540px] mb-10 text-pretty animate-fade-in-up delay-300">Scale your expertise with AI-powered digital clones that mentor audiences using your unique voice, tone, and knowledge.</p>
+
+                <!-- CTA Button -->
+                <button class="bg-[#244BFF] text-white px-6 py-3.5 font-mono-custom text-[13px] tracking-[0.08em] uppercase flex items-center gap-3 hover:opacity-90 transition-all duration-200 active:scale-97 animate-fade-in-up delay-400 shadow-sm">Clone Yourself</button>
+            </div>
+
+            <!-- Right Visual Column -->
+            <div class="lg:col-span-6 relative h-[600px] w-full flex items-center justify-center lg:justify-end">
+                
+                <!-- Background Blueprint Illustration (Placeholder) -->
+                <div class="absolute inset-0 right-[-100px] top-[-50px] bottom-[-50px] z-0 animate-scale-in delay-500 opacity-40 pointer-events-none mix-blend-multiply">
+                    <img src="https://imolwncbqxugevwmleed.supabase.co/storage/v1/object/public/public-assets/hero-images/b716f182-b680-4dd1-b50e-ca3c3ce53b02/hero-2-img-0-1775143222619.png" alt="Technical Blueprint" class="w-full h-full object-cover object-left">
+                </div>
+
+                <!-- Floating UI Box -->
+                <div class="relative z-10 w-full max-w-[480px] bg-[#f8faff]/95 backdrop-blur-md border border-[#244BFF] shadow-2xl shadow-[#244BFF]/10 animate-fade-in-up delay-600 lg:-translate-x-8">
+                    
+                    <!-- Box Header -->
+                    <div class="flex justify-between items-center px-5 py-3 border-b border-[#244BFF]">
+                        <span class="font-mono-custom text-[13px] text-[#244BFF]">A247293C3</span>
+                        <div class="w-4 h-4 border border-[#244BFF]"></div>
+                    </div>
+                    
+                    <!-- Box Content -->
+                    <div class="p-6 font-mono-custom text-[13px] leading-[1.8] text-gray-800">
+                        <div>Connecting to ERP... success</div>
+                        <div>Reading data from inventory</div>
+                        
+                        <div class="pl-4 mt-1 mb-1 flex items-start">
+                            <span class="text-[#244BFF] mr-2">✦</span>
+                            <div><span class="text-[#244BFF]">Hugo AI:</span> We have 3 late items</div>
+                        </div>
+                        
+                        <div>Thinking...</div>
+                        
+                        <div class="pl-4 mt-1 flex items-start">
+                            <span class="text-[#244BFF] mr-2">✦</span>
+                            <div><span class="text-[#244BFF]">Hugo AI:</span> Follow up with suppliers</div>
+                        </div>
+                        <div class="pl-4 mt-1 flex items-start">
+                            <span class="text-[#244BFF] mr-2">✦</span>
+                            <div><span class="text-[#244BFF]">Hugo AI:</span> Increase safety stock by 5</div>
+                        </div>
+                        
+                        <!-- Blinking cursor effect -->
+                        <div class="w-2 h-3.5 bg-[#244BFF] mt-2 animate-pulse"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
